@@ -1,0 +1,12 @@
+// BEGIN CUT HERE
+
+// END CUT HERE
+#line 5 "Snaky.cpp"
+#include <string>
+#include <vector>
+class Snaky {
+	public:
+	int longest(vector <string> snake) {
+		
+	}
+};

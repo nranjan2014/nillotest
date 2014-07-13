@@ -1,0 +1,3 @@
+#!/bin/sh
+ls -t *.cpp 
+./qprocess `ls -t *.cpp | head -n 1`

@@ -1,0 +1,12 @@
+// BEGIN CUT HERE
+
+// END CUT HERE
+#line 5 "Bigital.cpp"
+#include <string>
+#include <vector>
+class Bigital {
+	public:
+	double energy(string tStart, string tEnd) {
+		
+	}
+};

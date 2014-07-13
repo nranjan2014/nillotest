@@ -1,0 +1,68 @@
+<pre>
+DEFINITION
+Class:InternetSecurity
+Method:determineWebsite
+Parameters:vector &lt;string&gt;, vector &lt;string&gt;, vector &lt;string&gt;, int
+Returns:vector &lt;string&gt;
+Method signature:vector &lt;string&gt; determineWebsite(vector &lt;string&gt; address, vector &lt;string&gt; keyword, vector &lt;string&gt; dangerous, int threshold)
+
+NOTES
+-The address of a website is just a string used to uniquely identify it. It doesn't necessarily adhere to any common format of naming websites.
+
+CONSTRAINTS
+-address will contain between 1 and 50 elements, inclusive.
+-Each element of address will contain between 1 and 50 characters, inclusive.
+-Each character in address will be a '.', '_' or a lowercase letter ('a'-'z').
+-All elements of address will be distinct.
+-keyword will contain the same number of elements as address.
+-Each element of keyword will contain between 1 and 50 characters, inclusive.
+-Each character in keyword will be a ' ' or a lowercase letter ('a'-'z').
+-Each element in keyword will be formatted as described in the statement above.
+-For each website, the keywords associated with it will be distinct.
+-dangerous will contain between 1 and 50 elements, inclusive.
+-Each element of dangerous will contain between 1 and 50 characters, inclusive.
+-Each character in dangerous will be a lowercase letter ('a'-'z').
+-All elements of dangerous will be distinct.
+-threshold will be between 1 and 25, inclusive.
+
+EXAMPLES
+
+0)
+{"www.topcoder.com",
+"www.sindicate_of_evil.com",
+"www.happy_citizens.com"}
+{"hack encryption decryption internet algorithm",
+"signal interference evil snake poison algorithm",
+"flower baloon topcoder blue sky sea"}
+{"hack","encryption","decryption","interference","signal","internet"}
+3
+
+Returns: {"www.topcoder.com", "www.sindicate_of_evil.com" }
+
+"www.topcoder.com" is detected as dangerous since it contains four dangerous keywords: "hack", "encryption", "decryption", and "internet". Hence, "algorithm" becomes a dangerous keyword. As a result, "www.sindicate_of_evil.com" is detected as dangerous since it contains three dangerous keywords: "interference", "signal", and "algorithm". Hence, the correct return value is {"www.topcoder.com","www.sindicate_of_evil.com"} since the answer must be sorted in increasing order of website numbers.
+
+1)
+{"brokenlink","flowerpower.net","purchasedomain.com"}
+{"broken","rose tulips","cheap free domain biggest greatest"}
+{"biggest","enemy","hideout"}
+2
+
+Returns: { }
+
+No website is dangerous and an empty vector &lt;string&gt; should be returned.
+
+2)
+{"a..a.ab.","...aa.b"}
+{"a bc def","def ghij klmno"}
+{"a","b","c","d","e"}
+1
+
+Returns: {"a..a.ab.", "...aa.b" }
+
+3)
+{"www.tsa.gov"}
+{"information assurance signal intelligence research"}
+{"signal","assurance","penguin"}
+2
+
+Returns: {"www.tsa.gov" }

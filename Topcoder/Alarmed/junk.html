@@ -1,0 +1,76 @@
+<pre>
+DEFINITION
+Class:Alarmed
+Method:noise
+Parameters:vector &lt;int&gt;, vector &lt;int&gt;, vector &lt;int&gt;
+Returns:double
+Method signature:double noise(vector &lt;int&gt; x, vector &lt;int&gt; y, vector &lt;int&gt; threshold)
+
+
+NOTES
+-A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.
+
+
+CONSTRAINTS
+-x will contain between 1 and 50 elements, inclusive.
+-x, y and threshold will contain the same number of elements.
+-All sensor locations will be distinct.
+-Each element of x and y will be between 1 and 99, inclusive.
+-Each element of threshold will be between 1 and 10,000, inclusive.
+
+
+EXAMPLES
+
+0)
+{50}
+{2}
+{87}
+
+Returns: 347.99999999999994
+
+
+
+   Here there is one sensor, very close to the front door. The intruder can
+   move along the wall where he enters and continue to follow the walls until
+   he gets to the exit door. The closest he will get to the one sensor is at the
+   point where he enters the room which is a distance of 2 away. If A is 348 the
+   alarm will not sound, since 348/(2*2), the largest sound level at the 
+   sensor, does not exceed the threshold of the sensor, but any bigger value 
+   of A will sound the alarm.
+
+
+
+1)
+{1,99}
+{50,50}
+{1,1}
+
+Returns: 2400.9999999999995
+
+
+
+   There are two very sensitive sensors located near the east wall and the
+   west wall. The best path for an intruder is straight through the room. Then
+   the closest he will get to a sensor is a distance of 49, and the crucial value
+   of A will be 49*49 = 2401.0.
+
+
+2)
+{3,11,2,62,91}
+{90,10,75,25,50}
+{5,4,3,2,1}
+
+Returns: 1537.9999999999998
+
+
+
+
+3)
+{ 1,99}
+{ 50,50}
+{ 1, 2}
+
+Returns: 3295.5717878751793
+
+
+
