@@ -1,1 +1,3 @@
 new test
+This is my new test
+I love it
